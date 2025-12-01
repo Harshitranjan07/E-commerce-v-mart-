@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini E-commerce V-mart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">V-Mart</div>
+      <div>
+        <div style="font-weight:700">V-Mart Demo</div>
+        <div style="font-size:.8rem;color:var(--muted)">HTML • CSS • Vanilla JS</div>
+      </div>
+    </div>
+
+    <div class="search">
+      <input id="search" placeholder="Search products..." />
+    </div>
+
+    <div class="actions">
+      <div class="small">Items: <span id="cartCount">0</span></div>
+      <button class="btn" id="checkoutBtn">Checkout</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:10px">
+        <div>
+          <h2 style="margin:0">Products</h2>
+          <div class="small">Demo catalog — click "Add" to put items into cart</div>
+        </div>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <select id="sort">
+            <option value="default">Sort</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="productGrid" class="grid"></div>
+    </section>
+
+    <aside>
+      <div class="cart">
+        <h3>Cart</h3>
+        <div class="cart-list" id="cartList"></div>
+        <div class="subtotal" id="subtotal">Subtotal: ₹0</div>
+        <div style="margin-top:.75rem;display:flex;gap:.5rem">
+          <button class="btn" id="clearBtn">Clear</button>
+          <button class="btn" id="checkoutAside">Checkout</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <template id="productTpl">
+    <div class="card">
+      <div class="img">IMG</div>
+      <h4 class="title"></h4>
+      <div class="small desc"></div>
+      <div class="meta">
+        <div class="price"></div>
+        <button class="btn addBtn">Add</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
